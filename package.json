@@ -1,14 +1,15 @@
 {
-    "name": "nyaruko",
-    "version": "0.0.1",
-    "description": "node + express + angular + mongo",
-    "engines": {
-        "node": ">=7.0.0"
-    },
-    "scripts": {
-        "start": "node --harmony-async-await app.js"
-    },
-    "dependencies": {
-        "express": "^4.15.3"
-    }
+  "name": "nyaruko",
+  "version": "0.0.1",
+  "description": "node + express + angular + mongo",
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "scripts": {
+    "start": "node --harmony-async-await app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongodb": "^2.2.30"
+  }
 }

@@ -4,6 +4,7 @@ const [POST, GET] = ['post', 'get'];
 
 const addUser = async function(req, res, next) {
     try {
+        console.log(tag)
         let result = await controllers.user.addUser();
         res.send(result);
         return 'ok';
