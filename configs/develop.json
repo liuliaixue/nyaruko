@@ -1,3 +1,4 @@
 {
-    "dbURL": "mongodb://localhost:27017/test_nyaruko"
+    "dbURL": "mongodb://localhost:27017/test_nyaruko",
+    "port": 32331
 }

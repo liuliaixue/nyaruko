@@ -5,9 +5,7 @@ const { logger } = require('../tools/logger.js');
 const MongoClient = require('mongodb').MongoClient;
 
 const options = { poolSize: 4, keepAlive: 120, connectTimeoutMS: 30000 };
-
-
-let db;
+console.log('MongoClient connect...')
 MongoClient.connect(url, options, async function (err, database) {
     if (err) {
         logger.info(tag, '-----', "client failed to connect db " + url);

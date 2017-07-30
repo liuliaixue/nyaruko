@@ -1,3 +1,4 @@
+const configs = require('./configs');
 let express = require('express');
 let app = express();
 
@@ -5,8 +6,8 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.listen(8890, function() {
-    console.log("localhost:8890")
+app.listen(configs.port, function() {
+    console.log("localhost:" + configs.port)
 });
 
 let errorHandle = function(err, req, res, next) {
