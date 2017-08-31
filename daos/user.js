@@ -1,9 +1,13 @@
-let Client = require('./client.js');
-let client = new Client({ collection: 'user' });
-let {checkSchema }= require('./dao.tools.js');
+// let Client = require('./client.js');
+// let client = new Client({ collection: 'user' });
+// let {checkSchema }= require('./dao.tools.js');
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+let ObjectId = Schema.ObjectId;
+const {db }= require('./db');
 
 const [STRING, NUMBER, ARRAY, OBJECT, MIXED] = ['String', 'Number', 'Array', 'Object', 'Mixed'];
-const Schema = {
+const User = new Schema({
     name: STRING,
     email: STRING,
     password: STRING,
@@ -13,15 +17,9 @@ const Schema = {
     card: ARRAY,
     address: OBJECT,
     remark: MIXED,
-}
+});
 
-client.add = function (query) {
-    //TODO check schema type
-    checkSchema(query, Schema);
-    client.insertOne.call(client, query);
-};
-client.get = client.findByID;
-client.delete = client.deleteOne;
-client.update = client.update;
+let user = db.model('users', User);
 
-module.exports = client;
+module.exports = user;
+

@@ -6,11 +6,18 @@
     "node": ">=7.0.0"
   },
   "scripts": {
-    "start": "node --harmony-async-await app.js"
+    "start": "node --harmony-async-await app.js",
+    "test": "mocha"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongodb": "^2.2.30",
-    "mongoose": "^4.11.4"
+    "mongoose": "^4.11.5"
+  },
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
   }
 }
