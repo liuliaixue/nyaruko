@@ -6,7 +6,7 @@ let session = require('express-session');
 
 app.use(session({
     secret: 'modelo',
-    name: 'modelo', //这里的name值得是cookie的name，默认cookie的name是：connect.sid
+    name: 'alan', //这里的name值得是cookie的name，默认cookie的name是：connect.sid
     cookie: { maxAge: 15 * 60 * 1000 }, //设置maxAge是80000ms，即80s后session和相应的cookie失效过期
     resave: false,
     saveUninitialized: true,

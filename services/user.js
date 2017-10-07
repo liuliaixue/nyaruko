@@ -7,11 +7,11 @@ const addUser = async function(user) {
     const md5 = crypto.createHash('md5');
     user.password = md5.update(user.password).digest('hex');
     let userEntity = new UserDao(user);
+    console.log(userEntity)
     return userEntity.save();
 }
 
 const getUser = async function(userObjec) {
-    console.log(tag, userObjec)
     return UserDao.find(userObjec);
 }
 

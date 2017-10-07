@@ -22,4 +22,3 @@ const User = new Schema({
 let user = db.model('users', User);
 
 module.exports = user;
-

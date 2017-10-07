@@ -1,4 +1,0 @@
---harmony
---recursive
-./test/helper.spec.js
-{,!(node_modules)/**/}*.spec.js

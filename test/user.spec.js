@@ -1,23 +1,23 @@
 let axios = require('axios');
 let expect = require('chai').expect;
-let configs = require('../configs');
-
-
+let configs = require('./0.js');
+const serverURL = configs.serverURL;
+console.log(serverURL)
 describe('user', function () {
-    it('add user', async function () {
+    it('add user and get user', async function () {
         try {
-            let userObject = {
-                name: 'alan',
-                email: 'alan@test.com',
-                password: '12345678'
-            };
-            let user = await axios.post('http://localhost:32331/user/add', userObject);
-            let data = (await axios.get('http://localhost:32331/user/get/email/' + userObject.email)).data;
+            let userObject = configs.user;
+            let savedUser = (await axios.post(`${serverURL}/user/add`, userObject)).data;
+            let data = (await axios.get(`${serverURL}/user/get/id/` + savedUser._id)).data;
+            console.log(savedUser,data);
             let userEntity = data[0];
-            expect(userEntity.email).to.equal(userObject.email);
+            // expect(userObject.email).to.equal(userEntity.email);
         } catch (e) {
             console.log(e);
             throw e;
         }
-    })
-})
+    });
+    it('get user by email', async function() {
+        // let data = (await axios.get(`${serverURL}/user/get/email/` + userObject.email)).data;
+    });
+});
